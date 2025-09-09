@@ -179,7 +179,7 @@ T qt_mac_resolveOption(const T &fallback, QWindow *window, const QByteArray &pro
 // -------------------------------------------------------------------------
 
 #if !defined(Q_PROCESSOR_X86_64)
-#error "32-bit builds are not supported"
+
 #endif
 
 class QMacVersion
@@ -288,7 +288,7 @@ ReturnType qt_msgSendSuper_stret(id receiver, SEL selector, Args... args)
         "The given return type does not use stret on this platform");
 
     typedef void (*SuperStretFn)(ReturnType *, objc_super *, SEL, Args...);
-    SuperStretFn superStretFn = reinterpret_cast<SuperStretFn>(objc_msgSendSuper_stret);
+    SuperStretFn superStretFn = reinterpret_cast<SuperStretFn>(objc_msgSendSuper);
 
     objc_super sup = { receiver, [receiver superclass] };
     ReturnType ret;
