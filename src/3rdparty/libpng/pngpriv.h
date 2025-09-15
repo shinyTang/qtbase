@@ -11,6 +11,7 @@
  * and license in png.h
  */
 
+
 /* The symbols declared in this file (including the functions declared
  * as extern) are PRIVATE.  They are not part of the libpng public
  * interface, and are not recommended for use by regular applications.
